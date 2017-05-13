@@ -1,6 +1,6 @@
 function showMeWhatUGot(){
 	console.log("it worked!!!");
-	$.ajax({
+	return $.ajax({
 		type : "GET",
 		url : "helloServlet",
 		async : true,

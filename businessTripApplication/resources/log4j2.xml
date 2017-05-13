@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<Configuration status="INFO">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%-5level|%logger{1}|%method:%line] %msg%n" />
+		</Console>
+		
+		<!-- <File name="MyFile" fileName="C://Users//Christopher//Documents//UNI_NEU//Software Engineering//stuff for coding env//app.log">
+        	<PatternLayout pattern="[%-5level|%logger{1}|%method:%line] %msg%n"/>
+    	</File>   -->           
+	</Appenders>
+	<Loggers>
+		<Root level="info" includeLocation="true">
+			<AppenderRef ref="Console" />
+			<!-- <AppenderRef ref="MyFile" level="info"/> -->
+		</Root>
+	</Loggers>
+</Configuration>

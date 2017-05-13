@@ -34,26 +34,9 @@ public class helloServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String dbUrl = "java:comp/env/jdbc/testdb";
-		//String dbUrl = "jdbc/testdb";
-		Context ctx;
-		try {
-			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-			ctx = new InitialContext();
-			DataSource ds = (DataSource) ctx.lookup(dbUrl);
-			Connection connection = ds.getConnection();
-			System.out.println("DB connection succesful");
-			connection.close();
-			System.out.println("Closing connection succesful");
-		} catch (NamingException | SQLException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			System.out.println("FAIL: DB connection error");
-			e.printStackTrace();
-		}
-        
-		response.getWriter().print("What's hatnin?");
+		
+        response.getWriter().print("What's hatnin?");
 	}
 
 	/**

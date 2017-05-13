@@ -1,0 +1,5 @@
+dev\simpleServlets\simpleServlet.class
+com\bta\utilities\ResourceHelper.class
+com\bta\ApplicationStartUpListener.class
+com\bta\persistence\BtaEntityManagerFactory.class
+dev\simpleServlets\helloServlet.class
