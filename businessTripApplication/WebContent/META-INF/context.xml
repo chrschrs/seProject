@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 	side note: The type of a Tomcat resource must be a class that 
+		implements javax.naming.spi.ObjectFactory -->
 <Context>
 	<Resource name="jdbc/testdb"
               auth="Container" 
@@ -9,7 +11,8 @@
               url="jdbc:derby:C:\Users\Christopher\Documents\UNI_NEU\Software Engineering\testdb;create=true;upgrade=true"
               maxActive="20" maxIdle="10" 
     />
-	
+    <!--	configuration of a derby DB below with a generic URL. don't know how to 
+    		use this with the Data Source Explorer tho'. -->
 	<!-- <Resource name="jdbc/testdb"
               auth="Container" 
               type="javax.sql.DataSource"
@@ -19,4 +22,23 @@
               url="jdbc:derby:testdb;create=true"
               maxActive="20" maxIdle="10" 
     /> -->
+    <!-- TODO: use ldaps for a more secure SSL connection-->
+	<Resource 	name="ldap/ldapResource" auth="Container"
+				type="javax.naming.ldap.LdapContext"
+				factory="com.bta.authentication.LdapContextFactory"
+				singleton="false" 
+				java.naming.factory.initial="com.sun.jndi.ldap.LdapCtxFactory"
+				java.naming.provider.url="ldap://localhost:10389"/>
+	<!-- LDAP resource config with other details -->
+	<!-- <Resource 	name="ldap/ldapResource" auth="Container"
+				type="javax.naming.ldap.LdapContext"
+				factory="com.bta.LdapContextFactory"
+				singleton="false" 
+				java.naming.factory.initial="com.sun.jndi.ldap.LdapCtxFactory"
+				java.naming.provider.url="ldap://localhost:10389"
+				java.naming.security.authentication="simple"
+				java.naming.security.principal="username"
+				java.naming.security.credentials="password"
+	/> -->
+    
 </Context>

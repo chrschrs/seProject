@@ -28,6 +28,7 @@ public class BtaEntityManagerFactory {
 			InitialContext ctx = new InitialContext();
 			DataSource ds;
 			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/testdb");
+			LOGGER.info("Connecting to database...");
 			connection = ds.getConnection();
 			
 			LOGGER.info("datasource connection successful...");
